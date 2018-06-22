@@ -19,6 +19,7 @@
 
 package org.apache.cordova.splashscreen;
 
+import stone.application.StoneStart;
 import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -101,6 +102,7 @@ public class SplashScreen extends CordovaPlugin {
             @Override
             public void run() {
                 getView().setVisibility(View.INVISIBLE);
+                StoneStart.init(SplashScreen.this.cordova.getActivity());
             }
         });
         int drawableId = getSplashId();
